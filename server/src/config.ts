@@ -1,0 +1,31 @@
+import path from 'path';
+
+export const config = {
+  port: parseInt(process.env.PORT || '3001', 10),
+  jwtSecret: process.env.JWT_SECRET || 'spmb-bhina-karya-dev-secret-change-in-production',
+  jwtRefreshSecret: process.env.JWT_REFRESH_SECRET || 'spmb-bhina-karya-dev-refresh-change-in-production',
+  accessTokenTtl: process.env.ACCESS_TOKEN_TTL || '15m',
+  refreshTokenTtl: process.env.REFRESH_TOKEN_TTL || '7d',
+  corsOrigin: process.env.CORS_ORIGIN || '*',
+  dataDir: process.env.DATA_DIR || path.resolve(__dirname, '../../data'),
+  storageDir: process.env.STORAGE_DIR || path.resolve(__dirname, '../../storage/documents'),
+  maxFileSizeMB: parseInt(process.env.MAX_FILE_SIZE_MB || '5', 10),
+  signedUrlSecret: process.env.SIGNED_URL_SECRET || 'spmb-signed-url-dev-secret-change-in-production',
+  signedUrlTtlSec: parseInt(process.env.SIGNED_URL_TTL_SEC || '600', 10),
+  scannerBridgeToken: process.env.SCANNER_BRIDGE_TOKEN || 'spmb-bridge-token',
+  scannerBridgeUrl: process.env.SCANNER_BRIDGE_URL || 'http://127.0.0.1:45454',
+  ta: process.env.TA || '2027/2028',
+  publicMaxLoginAttempts: 5,
+  publicLockMinutes: 15,
+  sessionTimeoutMin: parseInt(process.env.SESSION_TIMEOUT_MIN || '30', 10),
+  notify: {
+    whatsappProvider: process.env.WA_PROVIDER || '',
+    whatsappApiUrl: process.env.WA_API_URL || '',
+    whatsappToken: process.env.WA_API_TOKEN || '',
+    smtpHost: process.env.SMTP_HOST || '',
+    smtpPort: process.env.SMTP_PORT || '',
+    smtpUser: process.env.SMTP_USER || '',
+    smtpPass: process.env.SMTP_PASS || '',
+    emailFrom: process.env.EMAIL_FROM || '',
+  },
+};

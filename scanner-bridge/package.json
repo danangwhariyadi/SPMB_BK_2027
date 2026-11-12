@@ -1,0 +1,11 @@
+{
+  "name": "scanner-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scanner bridge lokal untuk SPMB SMK Bhina Karya Karanganyar",
+  "main": "bridge.js",
+  "scripts": {
+    "start": "node bridge.js"
+  },
+  "dependencies": {}
+}
